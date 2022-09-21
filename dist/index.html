@@ -126,7 +126,7 @@
 					<div class="main-box-map">
 						<img src="./img/main/main-map.png" alt="" class="main-box-img">
 						<img src="./img/main/main-map-active.png" alt="" class="main-box-img-active">
-						<button class="main-map-btn" data-open="main-transit">
+						<button class="main-map-btn " data-open="main-transit">
 							<img src="./img/main/main-map-num.svg" alt="" class="main-btn-img">
 						</button>
 					</div>
@@ -149,7 +149,7 @@
 						</div>
 					</div>
 		
-					<div class="foundation-row">
+					<div class="foundation-row foundation-good">
 						<div class="foundation-box-img">
 							<img src="./img/foundation/foundation-1.jpg" alt="" class="foundation-img">
 						</div>
@@ -167,12 +167,13 @@
 								случаях, предпочитая более дешёвые и универсальные.
 							</p>
 						</div>
-						<button class="foundation-btn" data-size="" data-compare="" data-open="foundation-transit">
+						<button class="foundation-btn" data-size="foundation-good" data-compare="foundation-error-1"
+							data-open="foundation-transit">
 							Выбрать
 						</button>
 					</div>
 		
-					<div class="foundation-row">
+					<div class="foundation-row foundation-good">
 						<div class="foundation-box-img">
 							<img src="./img/foundation/foundation-2.jpg" alt="" class="foundation-img">
 						</div>
@@ -192,12 +193,13 @@
 								Также на таком основании не построить дом с подвалом или цокольным этажом.
 							</p>
 						</div>
-						<button class="foundation-btn" data-size="" data-compare="" data-open="foundation-transit">
+						<button class="foundation-btn" data-size="foundation-good" data-compare="foundation-error-2"
+							data-open="foundation-transit">
 							Выбрать
 						</button>
 					</div>
 		
-					<div class="foundation-row">
+					<div class="foundation-row foundation-good">
 						<div class="foundation-box-img">
 							<img src="./img/foundation/foundation-3.jpg" alt="" class="foundation-img">
 						</div>
@@ -219,12 +221,13 @@
 								прост в исполнении и имеет невысокую цену.
 							</p>
 						</div>
-						<button class="foundation-btn" data-size="" data-compare="" data-open="foundation-transit">
+						<button class="foundation-btn" data-size="foundation-good" data-compare="foundation-good"
+							data-open="foundation-transit">
 							Выбрать
 						</button>
 					</div>
 		
-					<div class="foundation-row">
+					<div class="foundation-row foundation-good">
 						<div class="foundation-box-img">
 							<img src="./img/foundation/foundation-4.jpg" alt="" class="foundation-img">
 						</div>
@@ -245,7 +248,8 @@
 								нужна дорогостоящая спецтехника.
 							</p>
 						</div>
-						<button class="foundation-btn" data-size="" data-compare="" data-open="foundation-transit">
+						<button class="foundation-btn" data-size="foundation-good" data-compare="foundation-error-3"
+							data-open="foundation-transit">
 							Выбрать
 						</button>
 					</div>
@@ -280,28 +284,28 @@
 								</h3>
 								<div class="calculation-group-row">
 									<label class="calculation-label">
-										<input type="radio" name="parameter__m" class="calculation-label-input" data-size=""
-											data-compare="">
+										<input type="radio" name="parameter__m" class="parameter__m calculation-label-input"
+											data-size="parameter__m" data-compare="depthCalculation-error">
 										<span class="calculation-label-span">
 											77,5
 										</span>
 									</label>
 									<label class="calculation-label">
-										<input type="radio" name="parameter__m" class="calculation-label-input" data-size=""
-											data-compare="">
+										<input type="radio" name="parameter__m" class="parameter__m calculation-label-input"
+											data-size="parameter__m" data-compare="depthCalculation-error">
 										<span class="calculation-label-span">
 											133,5
 										</span>
 									</label>
 									<label class="calculation-label">
-										<input type="radio" name="parameter__m" class="calculation-label-input" data-size=""
-											data-compare="">
+										<input type="radio" name="parameter__m" class="parameter__m calculation-label-input"
+											data-size="parameter__m" data-compare="parameter__m">
 										<span class="calculation-label-span">
 											56
 										</span>
 									</label>
 								</div>
-								<button class="calculation-group-btn">
+								<button class="calculation-group-btn" data-calc="parameter__m" data-group="depthCalculation">
 									Подтвердить
 								</button>
 							</div>
@@ -312,28 +316,28 @@
 								</h3>
 								<div class="calculation-group-row">
 									<label class="calculation-label">
-										<input type="radio" name="parameter__√M" class="calculation-label-input" data-size=""
-											data-compare="">
+										<input type="radio" name="parameter__√M" class="parameter__√M calculation-label-input"
+											data-size="parameter__√M" data-compare="depthCalculation-error">
 										<span class="calculation-label-span">
 											≈ 80
 										</span>
 									</label>
 									<label class="calculation-label">
-										<input type="radio" name="parameter__√M" class="calculation-label-input" data-size=""
-											data-compare="">
+										<input type="radio" name="parameter__√M" class="parameter__√M calculation-label-input"
+											data-size="parameter__√M" data-compare="parameter__√M">
 										<span class="calculation-label-span">
 											≈ 7,5
 										</span>
 									</label>
 									<label class="calculation-label">
-										<input type="radio" name="parameter__√M" class="calculation-label-input" data-size=""
-											data-compare="">
+										<input type="radio" name="parameter__√M" class="parameter__√M calculation-label-input"
+											data-size="parameter__√M" data-compare="depthCalculation-error">
 										<span class="calculation-label-span">
 											≈ 11,6
 										</span>
 									</label>
 								</div>
-								<button class="calculation-group-btn">
+								<button class="calculation-group-btn" data-calc="parameter__√M" data-group="depthCalculation">
 									Подтвердить
 								</button>
 							</div>
@@ -344,28 +348,28 @@
 								</h3>
 								<div class="calculation-group-row">
 									<label class="calculation-label">
-										<input type="radio" name="depth" class="calculation-label-input" data-size=""
-											data-compare="">
+										<input type="radio" name="depth" class="depth calculation-label-input" data-size="depth"
+											data-compare="depthCalculation-error">
 										<span class="calculation-label-span">
 											1,250 м
 										</span>
 									</label>
 									<label class="calculation-label">
-										<input type="radio" name="depth" class="calculation-label-input" data-size=""
-											data-compare="">
+										<input type="radio" name="depth" class="depth calculation-label-input" data-size="depth"
+											data-compare="depthCalculation-error">
 										<span class="calculation-label-span">
 											2,025 м
 										</span>
 									</label>
 									<label class="calculation-label">
-										<input type="radio" name="depth" class="calculation-label-input" data-size=""
-											data-compare="">
+										<input type="radio" name="depth" class="depth calculation-label-input" data-size="depth"
+											data-compare="depth">
 										<span class="calculation-label-span">
 											1,725 м
 										</span>
 									</label>
 								</div>
-								<button class="calculation-group-btn">
+								<button class="calculation-group-btn" data-calc="depth" data-group="depthCalculation">
 									Подтвердить
 								</button>
 							</div>
@@ -381,15 +385,15 @@
 									</h3>
 									<div class="calculation-group-row">
 										<label class="calculation-label">
-											<input type="radio" name="question" class="calculation-label-input" data-size=""
-												data-compare="">
+											<input type="radio" name="question" class="question calculation-label-input"
+												data-size="question" data-compare="question">
 											<span class="calculation-label-span">
 												Да
 											</span>
 										</label>
 										<label class="calculation-label">
-											<input type="radio" name="question" class="calculation-label-input" data-size=""
-												data-compare="">
+											<input type="radio" name="question" class="question calculation-label-input"
+												data-size="question" data-compare="depthCalculation-error">
 											<span class="calculation-label-span">
 												Нет
 											</span>
@@ -398,8 +402,8 @@
 		
 								</div>
 								<div class="calculation-group-coll-2">
-									<img src="./img/calculation/calculation.png" alt="" class="calculation-group-img">
-									<button class="calculation-group-btn">
+									<img src="./img/calculation/calculation.png" alt="" class=" calculation-group-img">
+									<button class="calculation-group-btn" data-calc="question" data-group="depthCalculation">
 										Подтвердить
 									</button>
 								</div>
@@ -524,12 +528,12 @@
 									</span>
 								</div>
 							</div>
-							<button class="calculation-btn" data-calutation="">
+							<button class="calculation-btn calculation-btn-1">
 								Далее
 							</button>
 						</div>
 					</div>
-					<div class="calculation-conteiner">
+					<div if="calculation-conteiners" class="calculation-conteiner calculation-conteiners">
 						<div class="calculation-conteiner-wrapp">
 							<h3 class="calculation-title">
 								Расчёт нагрузок ленточного фундамента
@@ -548,55 +552,62 @@
 								<div class="calculation-group-row --checkbox">
 		
 									<label class="calculation-label">
-										<input type="checkbox" name="--checkbox" class="calculation-label-input --checkbox"
-											data-size="" data-compare="" value="346893">
+										<input type="checkbox" name="--checkbox"
+											class="--number-sum calculation-label-input --checkbox" data-size="" data-compare=""
+											value="346893">
 										<span class="calculation-label-span --checkbox">
 											Стены
 										</span>
 									</label>
 		
 									<label class="calculation-label">
-										<input type="checkbox" name="--checkbox" class="calculation-label-input --checkbox"
-											data-size="" data-compare="" value="45066">
+										<input type="checkbox" name="--checkbox"
+											class="--number-sum  calculation-label-input --checkbox" data-size=""
+											data-compare="" value="45066">
 										<span class="calculation-label-span --checkbox">
 											Полезная нагрузка
 										</span>
 									</label>
 		
 									<label class="calculation-label">
-										<input type="checkbox" name="--checkbox" class="calculation-label-input --checkbox"
-											data-size="" data-compare="" value="100500">
+										<input type="checkbox" name="--checkbox"
+											class="--number-sum  calculation-label-input --checkbox" data-size=""
+											data-compare="" value="100500">
 										<span class="calculation-label-span --checkbox">
 											Перекрытия пола
 										</span>
 									</label>
 		
 									<label class="calculation-label">
-										<input type="checkbox" name="--checkbox" class="calculation-label-input --checkbox"
-											data-size="" data-compare="" value="3591">
+										<input type="checkbox" name="--checkbox"
+											class="--number-sum  calculation-label-input --checkbox" data-size=""
+											data-compare="" value="3591">
 										<span class="calculation-label-span --checkbox">
 											Стропильная система крыши
 										</span>
 									</label>
 		
 									<label class="calculation-label">
-										<input type="checkbox" name="--checkbox" class="calculation-label-input --checkbox"
-											data-size="" data-compare="" value="0">
+										<input type="checkbox" name="--checkbox"
+											class="--number-sum  calculation-label-input --checkbox" data-size="human"
+											data-compare="human-error" value="0">
 										<span class="calculation-label-span --checkbox">
 											Люди и кот Персик
 										</span>
 									</label>
 		
 									<label class="calculation-label">
-										<input type="checkbox" name="--checkbox" class="calculation-label-input --checkbox"
-											data-size="" data-compare="" value="2296.8">
+										<input type="checkbox" name="--checkbox"
+											class="--number-sum  calculation-label-input --checkbox" data-size=""
+											data-compare="" value="2296.8">
 										<span class="calculation-label-span --checkbox">
 											Лестницы
 										</span>
 									</label>
 									<label class="calculation-label">
-										<input type="checkbox" name="--checkbox" class="calculation-label-input --checkbox"
-											data-size="" data-compare="" value="17955">
+										<input type="checkbox" name="--checkbox"
+											class="--number-sum calculation-label-input --checkbox" data-size="" data-compare=""
+											value="17955">
 										<span class="calculation-label-span --checkbox">
 											Усилия от снеговой нагрузки зимой
 										</span>
@@ -609,7 +620,7 @@
 										<span class="calc-sum">0</span>
 										кг
 									</div>
-									<button class="calculation-group-btn">
+									<button class="calculation-group-btn" data-calc="--checkbox" data-group="loadСalculation">
 										Подтвердить
 									</button>
 								</div>
@@ -623,28 +634,31 @@
 								</h3>
 								<div class="calculation-group-row">
 									<label class="calculation-label">
-										<input type="radio" name="foundation-width" class="calculation-label-input" data-size=""
-											data-compare="">
+										<input type="radio" name="foundation-width"
+											class="foundation-width calculation-label-input" data-size="foundation-width"
+											data-compare="foundation-width">
 										<span class="calculation-label-span">
 											315 200 см²
 										</span>
 									</label>
 									<label class="calculation-label">
-										<input type="radio" name="foundation-width" class="calculation-label-input" data-size=""
-											data-compare="">
+										<input type="radio" name="foundation-width"
+											class="foundation-width calculation-label-input" data-size="foundation-width"
+											data-compare="depthCalculation-error">
 										<span class="calculation-label-span">
 											3 152 000 см²
 										</span>
 									</label>
 									<label class="calculation-label">
-										<input type="radio" name="foundation-width" class="calculation-label-input" data-size=""
-											data-compare="">
+										<input type="radio" name="foundation-width"
+											class="foundation-width calculation-label-input" data-size="foundation-width"
+											data-compare="depthCalculation-error">
 										<span class="calculation-label-span">
 											630 400 см²
 										</span>
 									</label>
 								</div>
-								<button class="calculation-group-btn">
+								<button class="calculation-group-btn" data-calc="foundation-width" data-group="loadСalculation">
 									Подтвердить
 								</button>
 							</div>
@@ -656,28 +670,31 @@
 								</h3>
 								<div class="calculation-group-row">
 									<label class="calculation-label">
-										<input type="radio" name="load-foundation" class="calculation-label-input" data-size=""
-											data-compare="">
+										<input type="radio" name="load-foundation"
+											class="load-foundation calculation-label-input" data-size="load-foundation"
+											data-compare="load-foundation">
 										<span class="calculation-label-span">
 											1,63 кг/см²
 										</span>
 									</label>
 									<label class="calculation-label">
-										<input type="radio" name="load-foundation" class="calculation-label-input" data-size=""
-											data-compare="">
+										<input type="radio" name="load-foundation"
+											class="load-foundation calculation-label-input" data-size="load-foundation"
+											data-compare="depthCalculation-error">
 										<span class="calculation-label-span">
 											4,89 кг/см²
 										</span>
 									</label>
 									<label class="calculation-label">
-										<input type="radio" name="load-foundation" class="calculation-label-input" data-size=""
-											data-compare="">
+										<input type="radio" name="load-foundation"
+											class="load-foundation calculation-label-input" data-size="load-foundation"
+											data-compare="depthCalculation-error">
 										<span class="calculation-label-span">
 											2,84 кг/см²
 										</span>
 									</label>
 								</div>
-								<button class="calculation-group-btn">
+								<button class="calculation-group-btn" data-calc="load-foundation" data-group="loadСalculation">
 									Подтвердить
 								</button>
 							</div>
@@ -688,21 +705,21 @@
 								</h3>
 								<div class="calculation-group-row">
 									<label class="calculation-label">
-										<input type="radio" name="quest-table" class="calculation-label-input" data-size=""
-											data-compare="">
+										<input type="radio" name="quest-table" class="quest-table calculation-label-input"
+											data-size="quest-table" data-compare="quest-table">
 										<span class="calculation-label-span">
 											Да
 										</span>
 									</label>
 									<label class="calculation-label">
-										<input type="radio" name="quest-table" class="calculation-label-input" data-size=""
-											data-compare="">
+										<input type="radio" name="quest-table" class="quest-table calculation-label-input"
+											data-size="quest-table" data-compare="depthCalculation-error">
 										<span class="calculation-label-span">
 											Нет
 										</span>
 									</label>
 								</div>
-								<button class="calculation-group-btn">
+								<button class="calculation-group-btn" data-calc="quest-table" data-group="loadСalculation">
 									Подтвердить
 								</button>
 							</div>
@@ -787,7 +804,7 @@
 								</div>
 		
 							</div>
-							<button class="calculation-btn" data-transition="supervision">
+							<button class="calculation-btn calculation-btn-2" data-open="supervision">
 								Вперёд
 							</button>
 						</div>
@@ -837,24 +854,24 @@
 								Авторский надзор
 							</h3>
 							<label class="supervision-label">
-								<input type="radio" name="supervision" class="supervision-label-input" data-size=""
-									data-compare="">
+								<input type="radio" name="supervision" class="supervision-label-input" data-size="supervision"
+									data-compare="supervision-error">
 								<span class="supervision-label-span">
 									Поблагодарить бригаду <br>
 									за проделанную работу
 								</span>
 							</label>
 							<label class="supervision-label">
-								<input type="radio" name="supervision" class="supervision-label-input" data-size=""
-									data-compare="">
+								<input type="radio" name="supervision" class="supervision-label-input" data-size="supervision"
+									data-compare="supervision">
 								<span class="supervision-label-span">
 									Сообщить заказчику<br>
 									и принять меры
 								</span>
 							</label>
-							<a href="#popup-finish" class="supervision-finins-btn open-modal-2">
+							<button class="supervision-finins-btn" data-finish="popup-finish">
 								Подтвердить
-							</a>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -880,7 +897,7 @@
 				инженера-проектировщика!
 			</p>
 		</div>
-		<button class="transition-btn" data-transition="foundation">
+		<button class="transition-btn" data-open="foundation">
 			Перейти к выбору фундамента
 		</button>
 	</div>
@@ -895,32 +912,35 @@
 				подходит лучше всего.
 			</p>
 		</div>
-		<button class="transition-btn" data-transition="calculation">
+		<button class="transition-btn" data-open="calculation">
 			К расчётам
 		</button>
 	</div>
-	<div id="popup-finish" class="finish mfp-hide">
-		<div class="finish-coll">
-			<h3 class="finish-title">
-				Совершенно верно!
-			</h3>
-			<p class="finish-text">
-				Для наглядности приведён грубый пример с крыльцом: такую ошибку сложно не заметить, причём ещё на этапе
-				возведения первого этажа.
-			</p>
-			<p class="finish-text">
-				В этом случае варианта развития событий два: или <br> строительная бригада должна за свой счёт исправить
-				<br>
-				оплошность и сделать всё в соответствии с проектом дома, <br> или вы должны скорректировать расчёты, чтобы
-				убедиться, <br> что зданию в таком состоянии ничего не угрожает.
-			</p>
-			<a href="#" class="finish-btn">
-				Перейти к финалу
-			</a>
+	<div class="finish-wrapp">
+		<div class="finish">
+			<div class="finish-coll">
+				<h3 class="finish-title">
+					Совершенно верно!
+				</h3>
+				<p class="finish-text">
+					Для наглядности приведён грубый пример с крыльцом: такую ошибку сложно не заметить, причём ещё на этапе
+					возведения первого этажа.
+				</p>
+				<p class="finish-text">
+					В этом случае варианта развития событий два: или <br> строительная бригада должна за свой счёт исправить
+					<br>
+					оплошность и сделать всё в соответствии с проектом дома, <br> или вы должны скорректировать расчёты,
+					чтобы
+					убедиться, <br> что зданию в таком состоянии ничего не угрожает.
+				</p>
+				<a href="#" class="finish-btn">
+					Перейти к финалу
+				</a>
+			</div>
+	
+			<img src="./img/finish/finish.png" alt="" class="finish-img">
+	
 		</div>
-	
-		<img src="./img/finish/finish.png" alt="" class="finish-img">
-	
 	</div>
 	
 	<script src="js/app.min.js"></script>

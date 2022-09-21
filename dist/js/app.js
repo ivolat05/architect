@@ -7,34 +7,244 @@
 $(function () {
 
 	let listError = {
-		"cofe-error": {
-			"title": "Это неправильный вариант. ",
-			"text": 'Ориентируйтесь на бюджет и цели бизнеса. На всякий можете заглянуть в справочник',
+		"foundation-error-1": {
+			"title": "",
+			"text": 'Увы, это не самое выгодное решение для нашего проекта. Если не знаете, какой вариант выбрать, загляните в справочник.',
 		},
-		"catalog-error": {
-			"title": "Это неправильный вариант. ",
-			"text": ' Загляните в справочник, если не получается выбрать правильный ответ.',
+		"foundation-error-2": {
+			"title": "",
+			"text": 'Увы, это не лучшее решение — наш дом слишком тяжёлый. Если не знаете, какой вариант выбрать, загляните в справочник.',
 		},
-		"map-error": {
-			"title": "Эта площадка слишком большая и дорогая.",
-			"text": 'Попробуйте выбрать другое место для открытия кофейни.',
+		"foundation-error-3": {
+			"title": "",
+			"text": 'К сожалению, с таким фундаментом не получится сделать цокольный этаж. Если не знаете, какой вариант выбрать, загляните в справочник.',
 		},
-		"marketing-good-error": {
+		"depthCalculation-error": {
 			"title": "Ой, это неверный вариант!",
-			"text": ' Если не знаете, что выбрать, можете заглянуть в справочник.',
+			"text": 'Если не знаете, какой вариант выбрать, загляните в справочник.',
 		},
-		"unique-good-error": {
-			"title": "У Дмитрия не хватит бюджета,",
-			"text": 'чтобы нанять такого специалиста и купить оборудование для обжарки и фасовки кофейных зёрен. Выберите что-то другое.',
+		"human-error": {
+			"title": "Ой, это неправильный вариант! ",
+			"text": 'Нагрузка от людей, питомцев и мебели уже входит в полезную нагрузку.',
 		},
-		"name-good-error": {
-			"title": "Ой, это неверный вариант!",
-			"text": 'Так уже называется заведение конкурента.',
+		"num-error": {
+			"title": "Вы выбрали не все нужные варианты!",
+			"text": 'Можете заглянуть в справочник за подсказкой.',
 		},
+		"supervision-error": {
+			"title": "Ой, это неправильный ответ!",
+			"text": 'Если не знаете, какой вариант выбрать, загляните в справочник.',
+		}
 	}
 
 
+	// открыие модальных окон для перехода на следующий этап
+	function transitOpen(btn, box) {
+		let btnOpen = document.querySelector(`${btn}`);
+		let transit = document.querySelectorAll(`${box}`);
+		btnOpen.addEventListener('click', () => {
+			btnOpen.classList.add('--active');
+			let dataArr = btnOpen.getAttribute('data-open');
+			let id = document.getElementById(dataArr);
+			if (dataArr == 'main-transit') {
+				let mainBoxMap = document.querySelector('.main-box-map');
+				mainBoxMap.classList.add('--active')
+			}
+			transit.forEach(item => {
+				if (item.classList.contains('--active')) {
+					item.classList.remove('--active')
+				}
+			})
+			setTimeout(() => {
+				id.classList.add('--active')
+			}, 1000)
 
+		})
+
+
+	}
+	transitOpen('.main-map-btn', '.transition')
+	function calculationBtn() {
+		let btn = document.querySelector('.calculation-btn-1');
+		let box = document.querySelectorAll('.calculation-conteiner');
+		btn.addEventListener('click', () => {
+
+			let calculationConteiners = document.querySelector('.calculation-conteiners');
+
+			box.forEach(item => {
+				if (item.classList.contains('--active')) {
+					item.classList.remove('--active');
+				}
+
+			})
+			calculationConteiners.classList.add('--active')
+		})
+	}
+	calculationBtn()
+
+
+	// переход на другой уровень
+	transitLevel('.transition-btn', '.--visible');
+	transitLevel('.foundation-btn', '.transition');
+	transitLevel('.calculation-btn-2', '.--visible');
+	function transitLevel(btn, box) {
+		let btnOpen = document.querySelectorAll(`${btn}`);
+		let boxLevel = document.querySelectorAll(`${box}`);
+		btnOpen.forEach(item => {
+			item.addEventListener('click', () => {
+				if (item.classList.contains('transition-btn')) {
+					let transit = document.querySelectorAll('.transition');
+					transit.forEach(item => {
+						if (item.classList.contains('--active')) {
+							item.classList.remove('--active')
+						}
+					})
+				}
+
+				let dataArr = item.getAttribute('data-open');
+				let dataCompare = item.getAttribute('data-compare');
+				let dataSize = item.getAttribute('data-size');
+				let id = document.getElementById(dataArr);
+
+				if (dataCompare === dataSize) {
+					deletStatError()
+					let sizeClass = document.querySelectorAll(`.${dataSize}`);
+					if (sizeClass) {
+						sizeClass.forEach(item => {
+							item.classList.add('--deactive-class');
+						})
+						if (item.parentElement.classList.contains('--deactive-class')) {
+							item.parentElement.classList.remove('--deactive-class')
+						}
+
+					}
+
+					item.classList.add('active');
+					boxLevel.forEach(event => {
+						if (event.classList.contains('--active')) {
+							event.classList.remove('--active')
+						}
+					})
+					setTimeout(() => {
+						id.classList.add('--active')
+					}, 800)
+
+
+				} else {
+
+					buttonError(listError[`${dataCompare}`].title, listError[`${dataCompare}`].text)
+				}
+			})
+		})
+	}
+
+
+	// расчет первая часть
+	calculationOne('.calculation-group-btn');
+	function calculationOne(btn) {
+		let btnActive = document.querySelectorAll(`${btn}`);
+		let coutner = 0;
+		let counterTwo = 0;
+		let ind = 0;
+		let calcSum = document.querySelector('.calc-sum');
+
+		btnActive.forEach(item => {
+			item.addEventListener('click', () => {
+				let summ = 0;
+				let dataCalc = item.getAttribute('data-calc');
+				let dataGroup = item.getAttribute('data-group');
+				let classInput = document.querySelectorAll(`.${dataCalc}`);
+				classInput.forEach(event => {
+					let dataSize = event.getAttribute('data-size');
+					let dataCompare = event.getAttribute('data-compare');
+					if (dataCalc != '--checkbox') {
+						if (event.checked) {
+							if (dataSize == dataCompare) {
+								deletStatError()
+								classInput.forEach(i => {
+									i.classList.add('--deactive')
+									i.parentElement.classList.add('--deactive')
+								})
+								item.classList.add('--active');
+								item.innerHTML = 'Готово';
+								event.parentElement.classList.add('--active');
+								event.parentElement.classList.remove('--deactive');
+								event.classList.remove('--deactive');
+								event.classList.add('--active');
+								if (dataGroup === 'depthCalculation') {
+									coutner += 1;
+									if (coutner == 4) {
+										let btnOne = document.querySelector('.calculation-btn-1');
+										btnOne.classList.add('--active')
+									}
+
+								} else {
+									counterTwo += 1;
+									if (counterTwo == 4) {
+										let btnOne = document.querySelector('.calculation-btn-2');
+										btnOne.classList.add('--active')
+									}
+								}
+							}
+							else {
+
+								buttonError(listError[`${dataCompare}`].title, listError[`${dataCompare}`].text)
+							}
+						}
+					} else {
+						if (event.checked) {
+							let dataSize = event.getAttribute('data-size');
+							let dataCompare = event.getAttribute('data-compare');
+							if (dataSize == 'human') {
+								buttonError(listError[`${dataCompare}`].title, listError[`${dataCompare}`].text)
+								event.classList.add('--human-deactive');
+								event.parentElement.classList.add('--human-deactive');
+								event.checked = false;
+							}
+							if (dataSize != 'human' && dataSize == dataCompare) {
+								summ += +event.value
+								calcSum.innerHTML = summ;
+							}
+							if (summ === 516301.8) {
+								let numSum = document.querySelectorAll(".--number-sum");
+								numSum.forEach(ev => {
+									if (ev.checked) {
+										ev.parentElement.classList.add('--active');
+										ev.classList.add('--active');
+									} else {
+										ev.parentElement.classList.add('--deactive')
+										ev.classList.add('--deactive')
+									}
+								})
+								deletStatError()
+								ind = 0;
+								item.classList.add('--active');
+								item.innerHTML = 'Готово';
+								counterTwo += 1;
+								if (counterTwo == 4) {
+									let btnOne = document.querySelector('.calculation-btn-2');
+									btnOne.classList.add('--active')
+								}
+
+
+
+
+							} else {
+								ind += 1;
+
+							}
+						}
+
+					}
+				})
+				if (ind > 0) {
+					buttonError(listError['num-error'].title, listError['num-error'].text)
+				}
+			})
+		})
+	}
+	// таймер
+	timer()
 	function timer() {
 		let minut = 20;
 		let second = 60;
@@ -67,6 +277,8 @@ $(function () {
 		}
 		const timerStart = setInterval(time, 1000)
 	}
+
+
 	$('.open-modal').magnificPopup({
 		type: 'inline',
 		mainClass: 'mfp-fade',
@@ -131,5 +343,37 @@ $(function () {
 
 	}
 
+	// окончание
+	function finish() {
+		let btn = document.querySelector('.supervision-btn');
+		btn.addEventListener('click', () => {
+			let supervisionFinish = document.querySelector('.supervision-finish');
+			let supervisionBack = document.querySelector('.supervision-back');
+			btn.classList.add('--active');
+			supervisionBack.classList.add('--active');
+			supervisionFinish.classList.add('--active');
+		})
+	}
+	finish()
+	function supervisionLabel() {
+		let btn = document.querySelector('.supervision-finins-btn');
+		btn.addEventListener('click', () => {
+			let supervisionLabelInput = document.querySelectorAll('.supervision-label-input');
+			supervisionLabelInput.forEach(item => {
+				if (item.checked) {
+					let dataSize = item.getAttribute('data-size');
+					let dataCompare = item.getAttribute('data-compare');
+					if (dataSize == dataCompare) {
+						deletStatError()
+						let dataArr = document.querySelector('.finish-wrapp');
+						dataArr.classList.add('--active')
 
+					} else {
+						buttonError(listError[`${dataCompare}`].title, listError[`${dataCompare}`].text)
+					}
+				}
+			})
+		})
+	}
+	supervisionLabel()
 })
