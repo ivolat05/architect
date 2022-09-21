@@ -69,12 +69,18 @@ $(function () {
 	}
 	$('.open-modal').magnificPopup({
 		type: 'inline',
-		mainClass: 'mfp-fade'
+		mainClass: 'mfp-fade',
 
 	});
 
 
+	$('.open-modal-2').magnificPopup({
+		type: 'inline',
+		mainClass: 'mfp-fade',
+		closeOnBgClick: false,
+		showCloseBtn: false
 
+	});
 
 	// вызов ошибки
 	function buttonError(title, text) {
